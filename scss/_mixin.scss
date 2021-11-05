@@ -1,0 +1,83 @@
+@mixin wrapper {
+    width: 75%;
+    max-width: 1170px;
+    margin: 0 auto;
+    @media screen and (max-width: 992px) {
+        width: 90%;
+    }
+}
+@mixin wrapper-ftr {
+    width: 50%;
+    max-width: 770px;
+    margin: 0 auto;
+    @media screen and (max-width: 992px) {
+        width: 80%;
+    }
+}
+@mixin sec-title {
+    position: relative;
+    margin-bottom: 2.27em;
+    font-size: calc(20px + 24 * ((100vw - 320px) / (1600 - 320)));  // 44px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    color: #2c4058;
+    &::before {
+        content: '';
+        display: block;
+        width: 2.27em;
+        height: 1px;
+        background-color: #2c4058;
+        position: absolute;
+        top: -0.9em;
+        left: calc(50% - 2.27em / 2);
+    }
+    @media screen and (max-width: 992px) {
+        margin-bottom: 1em;
+    }
+}
+@mixin btn_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    svg {
+        width: 50%;
+        height: 50%;
+        color: #ffffff;
+    }
+}
+@mixin btn_icon_group {
+    display: flex;
+    align-items: center;
+    .social__item {
+        @include btn_icon;
+        &:nth-child(2) {
+            margin: 0 20px;
+        }
+    }
+}
+@mixin btn_sbmt {
+    display: block;
+    padding: 1.4em 3.6em;
+    border: 1px solid #2c4058;
+    font-family: 'Gotham', sans-serif;
+    font-size: calc(8px + 6 * ((100vw - 320px) / (1600 - 320)));  // 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #2c4058;
+    background-color: transparent;
+    &:hover {
+        border: 1px solid transparent;
+        background: linear-gradient(45deg, rgb(85, 183, 255), rgb(126, 90, 255));
+        cursor: pointer;
+    }
+}
+@mixin slider_fix {
+    overflow: hidden; 
+    width: 0;   
+    min-width: 100%; 
+}
